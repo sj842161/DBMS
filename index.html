@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSBTE DBMS Exam – Repeated Questions</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px;
+    }
+    .container {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1, h2 {
+      background: linear-gradient(90deg, #26c6da, #ec407a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    h3 {
+      color: #00796b;
+      margin-top: 30px;
+    }
+    pre, code {
+      background-color: #f1f8e9;
+      padding: 10px;
+      border-radius: 10px;
+      display: block;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #4db6ac;
+      color: white;
+    }
+    .question {
+      font-weight: bold;
+      color: #4a148c;
+    }
+    .answer {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📘 MSBTE DBMS Exam – Most Repeated Questions with Answers (2019–2024)</h1>
+
+    <h2>✅ Unit 1: Introduction to DBMS</h2>
+    <div class="question">Q1. Define DBMS. List any two advantages of DBMS.</div>
+    <div class="answer">
+      A DBMS is software for creating, storing, managing, and retrieving data from databases.<br>
+      <strong>Advantages:</strong><br>
+      1. Data consistency<br>
+      2. Controlled redundancy
+    </div>
+
+    <div class="question">Q2. Differentiate between File System and DBMS.</div>
+    <table>
+      <tr><th>File System</th><th>DBMS</th></tr>
+      <tr><td>No security</td><td>Secure data access</td></tr>
+      <tr><td>No backup</td><td>Backup and recovery possible</td></tr>
+      <tr><td>High redundancy</td><td>Low redundancy</td></tr>
+      <tr><td>No relationships between files</td><td>Relationships exist</td></tr>
+    </table>
+
+    <h2>✅ Unit 2: Relational Model and SQL</h2>
+    <div class="question">Q3. Define Primary Key and Foreign Key with example.</div>
+    <div class="answer">
+      - <strong>Primary Key:</strong> Unique identifier (e.g., Roll_No in Student table)<br>
+      - <strong>Foreign Key:</strong> A key used to link two tables (e.g., Roll_No in Marks table refers Student)
+    </div>
+
+    <div class="question">Q4. Write any four DDL commands with syntax.</div>
+    <pre><code>CREATE TABLE student(roll INT, name VARCHAR(20));
+DROP TABLE student;
+ALTER TABLE student ADD class VARCHAR(10);
+TRUNCATE TABLE student;</code></pre>
+
+    <h2>✅ Unit 3: E-R Modeling</h2>
+    <div class="question">Q5. Draw E-R diagram for College Management System.</div>
+    <div class="answer">
+      <strong>Entities:</strong> Student, Course, Faculty<br>
+      <strong>Relations:</strong> Student <em>enrolls in</em> Course, Faculty <em>teaches</em> Course
+    </div>
+
+    <div class="question">Q6. Explain Simple and Composite attributes.</div>
+    <div class="answer">
+      - <strong>Simple:</strong> Atomic (e.g., Age)<br>
+      - <strong>Composite:</strong> Divided into sub-parts (e.g., Name → First_Name, Last_Name)
+    </div>
+
+    <h2>✅ Unit 4: Relational Algebra and SQL</h2>
+    <div class="question">Q7. Write SQL queries:</div>
+    <pre><code>-- a) Show all students of class 'SY'
+SELECT * FROM student WHERE class = 'SY';
+
+-- b) Show name and roll_no of students with marks > 60
+SELECT name, roll_no FROM marks WHERE marks > 60;</code></pre>
+
+    <div class="question">Q8. Types of JOINs in SQL:</div>
+    <ul>
+      <li>INNER JOIN</li>
+      <li>LEFT JOIN</li>
+      <li>RIGHT JOIN</li>
+      <li>FULL JOIN</li>
+    </ul>
+
+    <h2>✅ Unit 5: PL/SQL and Triggers</h2>
+    <div class="question">Q9. Write PL/SQL block to check even/odd.</div>
+    <pre><code>DECLARE
+  num NUMBER := 5;
+BEGIN
+  IF MOD(num, 2) = 0 THEN
+    DBMS_OUTPUT.PUT_LINE('Even');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Odd');
+  END IF;
+END;</code></pre>
+
+    <div class="question">Q10. Define Trigger. Write BEFORE INSERT trigger syntax.</div>
+    <pre><code>CREATE OR REPLACE TRIGGER trg1
+BEFORE INSERT ON student
+FOR EACH ROW
+BEGIN
+  -- your code here
+END;</code></pre>
+
+    <h2>✅ Unit 6: Normalization and Indexing</h2>
+    <div class="question">Q11. Explain 1NF, 2NF, 3NF with examples.</div>
+    <ul>
+      <li><strong>1NF:</strong> Atomic values only</li>
+      <li><strong>2NF:</strong> No partial dependency</li>
+      <li><strong>3NF:</strong> No transitive dependency</li>
+    </ul>
+
+    <div class="question">Q12. Define Indexing. Types of indexes:</div>
+    <ul>
+      <li>Primary Index</li>
+      <li>Secondary Index</li>
+      <li>Clustered</li>
+      <li>Non-clustered</li>
+    </ul>
+  </div>
+</body>
+</html>
